@@ -30,6 +30,6 @@ def employeeForm(request, id=0):
 
 # DELETE
 def employeeDelete(request, id):
-    employee =Employee.objects.get(pk=id)
+    employee = Employee.objects.get(pk=id)
     employee.delete()
-    return redirect('/employee/list')
+    return redirect('/list')
