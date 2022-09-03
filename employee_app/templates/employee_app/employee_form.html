@@ -1,0 +1,31 @@
+{% extends 'employee_app/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action='' method='POST' autocomplete= 'off'>
+    {% csrf_token %}
+{{form.name|as_crispy_field}}
+{{form.idnum|as_crispy_field}}
+<div class="row">
+    <div class="col-md-4">
+        {{form.phoneNum|as_crispy_field}}
+    </div>
+</div>
+<div>
+    {{form.position|as_crispy_field}}
+</div>
+<p></p>
+<div class="row">
+    <div class="col-md-8">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <p></p>
+        <div class="col-md-8">
+            <a href="{% url 'employee_list' %}" class="btn btn-success btn-block btn-lg">
+                <i class="fas fa-stream"></i>
+                Back to list
+            </a>
+        </div>
+    </div>
+</div>
+</form>
+{% endblock content %}
